@@ -106,9 +106,6 @@ header{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--bg) 
 .cta{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:28px}
 .cta .alt{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
 .cta .alt[hidden]{display:none}
-.cta .small{font-size:15px;color:var(--muted)}
-.founder{display:inline-flex;align-items:center;gap:10px;margin-top:22px;padding:10px 16px 10px 10px;border-radius:999px;background:var(--surface);border:3px solid var(--ink);font-weight:700;font-size:15px;text-align:left}
-.founder b{font:800 13px/1 var(--f-label);letter-spacing:.08em;text-transform:uppercase;padding:6px 9px;border-radius:999px;background:var(--gold);color:var(--ink);flex:none}
 
 .stage{position:relative;width:100%;max-width:1040px;height:clamp(440px, 56vw, 620px);margin-top:48px}
 .phone,.reel{--w:clamp(212px, 27vw, 290px);position:absolute;left:50%;top:0;width:var(--w);margin-left:calc(var(--w) / -2)}
@@ -202,6 +199,41 @@ section{padding-block:84px}
 .vs .mid{font:800 20px/1 var(--f-label);letter-spacing:.06em;width:52px;height:52px;display:grid;place-items:center;border-radius:50%;border:3px solid var(--ink);background:var(--red);color:var(--ink)}
 .vs .stack{display:flex}
 .vs .stack .av{margin-right:-6px}
+/* Workout mockup */
+.wo{padding:22px;display:flex;flex-direction:column;gap:14px}
+.wo-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.wo-head strong{font:800 clamp(26px, 4vw, 32px)/1 var(--f-label);letter-spacing:.02em;text-transform:uppercase}
+.wo-head small{font:800 14px/1 var(--f-label);letter-spacing:.08em;text-transform:uppercase;color:var(--good)}
+.wo-days{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.wo-days span{display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 4px;border-radius:14px;border:3px solid var(--ink);background:var(--surface2);font:700 12px/1 var(--f-body);color:var(--muted)}
+.wo-days span b{font:800 22px/1 var(--f-label);color:var(--fg)}
+.wo-days span.on{background:var(--paper);color:var(--paper-muted)}
+.wo-days span.on b{color:var(--paper-fg)}
+.wo-list{display:flex;flex-direction:column}
+.wo-ex{display:grid;grid-template-columns:28px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-top:2px solid var(--line)}
+.wo-ex .n{font:800 18px/1 var(--f-label);color:var(--muted);text-align:center}
+.wo-ex b{display:block;font-weight:700}
+.wo-ex span{display:block;font-size:14px;color:var(--muted)}
+.wo-ex .done{font:800 13px/1 var(--f-label);letter-spacing:.06em;text-transform:uppercase;padding:7px 10px;border-radius:999px;background:color-mix(in srgb, var(--good) 30%, transparent);color:var(--fg)}
+.wo-ex .pr{background:color-mix(in srgb, var(--gold) 30%, transparent)}
+.wo-ex .next{font:800 13px/1 var(--f-label);letter-spacing:.06em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:2px solid var(--ink);background:var(--red);color:var(--ink)}
+.wo-rest{display:flex;align-items:center;gap:14px;padding:12px 14px;border-radius:16px;border:3px solid var(--ink);background:var(--surface2)}
+.wo-rest svg{width:44px;height:44px;flex:none}
+.wo-rest b{display:block;margin-bottom:4px;font:800 20px/1 var(--f-display);font-variant-numeric:tabular-nums}
+.wo-rest span{font-size:14px;color:var(--muted)}
+/* Leaderboard mockup */
+.lb{padding:22px;display:flex;flex-direction:column;gap:6px}
+.lb .bh span{font:800 15px/1 var(--f-label);letter-spacing:.09em;text-transform:uppercase;color:var(--gold)}
+.lb table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;margin-top:8px}
+.lb th{font:800 14px/1 var(--f-label);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:right;padding:8px 6px}
+.lb th:first-child,.lb td:first-child{text-align:left}
+.lb td{padding:12px 6px;text-align:right;border-top:2px solid var(--line);font-weight:600}
+.lb td:first-child{font-weight:700;white-space:nowrap}
+.lb td.tot{font:800 17px/1 var(--f-display)}
+.lb tr.top td.tot,.lb .crown{color:var(--gold)}
+.lb tr.you td{background:color-mix(in srgb, var(--red) 14%, transparent)}
+.lb-foot{font-size:13px;color:var(--muted);margin-top:4px}
+@media (max-width:400px){.lb{padding:16px}.lb th,.lb td{padding-inline:4px;font-size:15px}.lb td.tot{font-size:15px}}
 .vs-foot{grid-column:1/-1;border-top:2px solid var(--line);padding-top:12px;font-size:14px;color:var(--muted);text-align:center}
 
 /* Small tiles */
@@ -241,10 +273,6 @@ section{padding-block:84px}
 .import .to span{color:var(--muted);font-size:15px}
 @media (max-width:700px){.import{grid-template-columns:1fr;padding:20px}.import .arrow{transform:rotate(90deg);justify-self:center}}
 
-/* Real screenshot on a phone, inside a beat */
-.shot{--w:min(300px, 76vw);width:var(--w);height:calc(var(--w) * 1.72);margin-inline:auto;border-radius:calc(var(--w) * .14);border:9px solid var(--frame);box-shadow:0 0 0 2px var(--ink), 0 10px 0 var(--ink);overflow:hidden;background:var(--app-bg);position:relative}
-.shot img{width:100%;margin-top:30px}
-.shot img[src*=podium]{margin-top:0}
 
 /* Free vs Pro */
 .plans{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch}
@@ -260,7 +288,6 @@ section{padding-block:84px}
 .plan.free li span span{color:var(--paper-muted)}
 .plan.pro li span span{color:var(--muted)}
 .plan .promise{margin-top:auto;padding:14px 16px;border-radius:16px;border:3px solid var(--ink);background:color-mix(in srgb, var(--good) 24%, transparent);font-weight:700}
-.plan .promise.gold{background:color-mix(in srgb, var(--gold) 22%, transparent)}
 @media (max-width:760px){.plans{grid-template-columns:1fr}.plan{padding:22px}}
 
 /* FAQ */
@@ -311,9 +338,7 @@ footer{border-top:2px solid var(--line);padding-block:28px 40px;color:var(--mute
       <div class="cta" data-cta>
         <a class="btn" data-primary href="https://lograr.live/">Start a crew. It's free.</a>
         <div class="alt" data-alt hidden></div>
-        <p class="small" data-note>Works in any browser. iPhone and Android apps in beta.</p>
       </div>
-      <p class="founder"><b>Founders</b>Join before Pro launches and it's yours for life.</p>
     </div>
 
     <div class="stage">
@@ -394,7 +419,20 @@ footer{border-top:2px solid var(--line);padding-block:28px 40px;color:var(--mute
           <p>Your big three, added up and ranked against the crew.</p>
         </div>
         <div class="beat-art">
-          <div class="shot"><img src="media/screens/05-leaderboard-podium.webp" width="600" height="1000" alt="The leaderboard: a podium with Alex first at 1,009 lb, Sam second and Jo third." loading="lazy"></div>
+          <div class="panel lb">
+            <div class="bh"><span>Leaderboard · PR total</span></div>
+            <table>
+              <thead><tr><th scope="col">Lifter</th><th scope="col">Bench</th><th scope="col">Squat</th><th scope="col">Dead</th><th scope="col">Total</th></tr></thead>
+              <tbody>
+                <tr class="top"><td><span class="crown" aria-hidden="true">♛</span> Jess</td><td>225</td><td>315</td><td>405</td><td class="tot">945</td></tr>
+                <tr><td>Riley</td><td>205</td><td>300</td><td>385</td><td class="tot">890</td></tr>
+                <tr><td>Sam</td><td>215</td><td>285</td><td>350</td><td class="tot">850</td></tr>
+                <tr class="you"><td>You</td><td>205</td><td>265</td><td>365</td><td class="tot">835</td></tr>
+                <tr><td>Luis 🐔</td><td>185</td><td>245</td><td>315</td><td class="tot">745</td></tr>
+              </tbody>
+            </table>
+            <p class="lb-foot">Estimated 1RM, lb or kg</p>
+          </div>
         </div>
       </div>
 
@@ -461,7 +499,16 @@ footer{border-top:2px solid var(--line);padding-block:28px 40px;color:var(--mute
           <p>Programs, a rest timer, and every set you've ever done one tap away.</p>
         </div>
         <div class="beat-art">
-          <div class="shot"><div class="island"></div><img src="media/screens/03-workout.webp" width="600" height="1227" alt="A workout: Upper Power, with each exercise's sets and reps and a Start workout button." loading="lazy"></div>
+          <div class="panel wo">
+            <div class="wo-head"><strong>Upper Power</strong><small>4-day upper/lower</small></div>
+            <div class="wo-days" aria-hidden="true"><span class="on">Upper<b>1</b></span><span>Lower<b>2</b></span><span>Upper<b>3</b></span><span>Lower<b>4</b></span></div>
+            <div class="wo-list">
+              <div class="wo-ex"><span class="n">1</span><div><b>Bench press</b><span>5 × 3 · 205 lb</span></div><span class="done pr">PR 🔥</span></div>
+              <div class="wo-ex"><span class="n">2</span><div><b>Barbell rows</b><span>5 × 3 · 155 lb</span></div><span class="done">Done</span></div>
+              <div class="wo-ex"><span class="n">3</span><div><b>Incline dumbbell press</b><span>3 × 8 · 60 lb</span></div><span class="next">Set 2</span></div>
+            </div>
+            <div class="wo-rest"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="18" fill="none" stroke="var(--surface)" stroke-width="6"/><circle cx="22" cy="22" r="18" fill="none" stroke="var(--red)" stroke-width="6" stroke-linecap="round" stroke-dasharray="113" stroke-dashoffset="40" transform="rotate(-90 22 22)"/></svg><div><b>1:12</b><span>Rest · next set 60 lb × 8</span></div></div>
+          </div>
         </div>
       </div>
       <div class="tiles after">
@@ -501,7 +548,6 @@ footer{border-top:2px solid var(--line);padding-block:28px 40px;color:var(--mute
             <li><span><b>Crew Boost</b><span>Your color on your whole crew.</span></span></li>
             <li><span><b>Looks</b><span>4 themes, 4 fonts, every icon color.</span></span></li>
           </ul>
-          <p class="promise gold">Join before Pro launches and you get it free for life.</p>
         </div>
       </div>
     </div>
@@ -515,7 +561,7 @@ footer{border-top:2px solid var(--line);padding-block:28px 40px;color:var(--mute
       </div>
       <div class="faq">
         <details><summary>Is Lograr on the App Store or Google Play?</summary><p>The iPhone and Android apps are in beta. Until they're out, Lograr runs in your browser at lograr.live and installs to your home screen like an app.</p></details>
-        <details><summary>Does it cost anything?</summary><p>No. Crews, logging, imports and backup are free, with no ads. Pro is an optional upgrade for longer charts, muscle volume and looks. Everyone who joins before Pro launches gets it free for life.</p></details>
+        <details><summary>Does it cost anything?</summary><p>No. Crews, logging, imports and backup are free, with no ads. Pro is an optional upgrade for longer charts, muscle volume and looks.</p></details>
         <details><summary>Can I bring my history from another app?</summary><p>Yes. Import a CSV from Strong, Hevy or your own spreadsheet, and your sets, PRs and gym days come with you.</p></details>
         <details><summary>Do I need an account?</summary><p>Not to log your own workouts. You need an email sign-in to start or join a crew, so your crew can see when you went.</p></details>
         <details><summary>How big can a crew be?</summary><p>Up to 30 people, and you can be in up to 3 crews. A crew of 4 or fewer keeps its streak when everyone hits their week. In a bigger crew, three quarters of the members need to.</p></details>
@@ -556,16 +602,14 @@ const droid='<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColo
 const iosBtn=c=>`<a class="btn ${c}" href="${L.testflight}">${apple}Get the iPhone beta</a>`;
 const playBtn=c=>`<a class="btn ${c}" href="${L.play}">${droid}Join the Android beta</a>`;
 document.querySelectorAll("[data-cta]").forEach(cta=>{
-  const p=cta.querySelector("[data-primary]"),alt=cta.querySelector("[data-alt]"),note=cta.querySelector("[data-note]");
+  const p=cta.querySelector("[data-primary]"),alt=cta.querySelector("[data-alt]");
   let mine="";
   if(ios&&L.testflight)mine=iosBtn("");else if(android&&L.play)mine=playBtn("");
   if(mine){
     p.outerHTML=mine;
     alt.innerHTML='<a class="btn ghost sm" href="https://lograr.live/">Or use it in your browser</a>';alt.hidden=false;
-    if(note)note.hidden=true;
   }else if(!ios&&!android&&(L.testflight||L.play)){
     alt.innerHTML=(L.testflight?iosBtn("ghost sm"):"")+(L.play?playBtn("ghost sm"):"");alt.hidden=false;
-    if(note)note.hidden=true;
   }
 });
 
